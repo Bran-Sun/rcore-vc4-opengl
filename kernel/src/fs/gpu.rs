@@ -60,8 +60,11 @@ impl INode for Gpu {
     }
 
     fn io_control(&self, cmd: u32, data: usize) -> Result<()> {
-        if let Some(gd) = GPU_DEVICE.lock().as_mut() {
-            return gd.io_control(cmd, data)
+        #[cfg(target_arch = "aarch64")]
+        {
+            if let Some(gd) = GPU_DEVICE.lock().as_mut() {
+                return gd.io_control(cmd, data)
+            }
         }
         warn!("use never support ioctl !");
         Err(FsError::NotSupported)

@@ -74,6 +74,7 @@ impl INode for Vga {
                 }
                 Ok(())
             },
+            #[cfg(target_arch = "aarch64")]
             FBIOPAN_DISPLAY => {
                 let fb_var_info = unsafe { &mut *(data as *mut FramebufferInfo) };
                 if let Some(fb) = FRAME_BUFFER.lock().as_mut() {

@@ -20,19 +20,29 @@ OsTrain2019 Group 2 [Link](http://os.cs.tsinghua.edu.cn/oscourse/OsTrain2019/g2)
 
 ### Final Results
 
-完成了学期初的目标,在rCore中实现Raspberry Pi 3B+的VideoCore IV GPU驱动，并且能够画出简单的2D/3D图形动画。
+我们完成了学期初的目标,在rCore中实现Raspberry Pi 3B+的VideoCore IV GPU驱动，并且能够画出简单的2D/3D图形动画。
 
 Samples:
 
-![](anim.jpg)
+**Triangle Animation**
 
-![](cube.jpg)
+![triangle animation](media/anim.gif)
 
-![](porygon.jpg)
+**Rotating Cube**
 
-![](z-test.jpg)
+![rotating cube](media/cube.gif)
 
-![](shapes.jpg)Performance Comparison:
+**Rotating Porygon**
+
+![rotating porygon](media/porygon.gif)
+
+**Z-axis Test**
+
+![z-axis test](media/z-test.jpg)
+
+**Colorful Shapes**
+
+![colorful shapes](media/shapes.jpg)Performance Comparison:
 
 我们对比了使用驱动（anim/cube/porygon）和不使用驱动（Bad apple）两种情况下framebuffer refresh frequency。
 
@@ -169,9 +179,9 @@ vc4驱动位于`rcore-user/videocore/libgl/src/drivers/vc4`目录下。我们并
 
 在完成移植工作的同时，我们也在反思如何为之后做类似移植工作的同学提供帮助。
 
-一方面，我们总结出了一个C-Rust Translation Guidelines，对移植中的一些通用技巧进行了总结。链接？？？
+一方面，我们总结出了一个C-Rust Translation Guidelines，对移植中的一些通用技巧进行了总结。[链接](C2Rust_Guidelines.md)
 
-另一方面，我们针对现有翻译工具[C2Rust Translation Tool](<https://immunant.com/blog/2019/08/introduction-to-c2rust/>)进行了对比分析，指出了它可以借鉴的地方，以及存在问题的地方。链接？？？
+另一方面，我们针对现有翻译工具[C2Rust Translation Tool](<https://immunant.com/blog/2019/08/introduction-to-c2rust/>)进行了对比分析，指出了它可以借鉴的地方，以及存在问题的地方。[链接](TranslateAnalysis.md)
 
 
 
